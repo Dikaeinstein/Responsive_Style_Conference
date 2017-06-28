@@ -953,5 +953,12 @@ textarea {
   height: 4.875rem; /* 78px */
   overflow: auto;
 }
- 
+
+/*
+  ==================================
+    Purchase
+  ==================================
+*/
+#purchase {
+  height: 300px;
 }
