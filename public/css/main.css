@@ -1,0 +1,965 @@
+﻿@charset "utf-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Mobile First */
+
+body {
+  background: #293f50;
+  color: #888;
+  font: 300 1rem/1.375rem "Lato", Lato, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; /* 16px/22px */
+}
+
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+	     -ms-box-sizing: border-box;
+         -box-sizing: border-box;
+}
+.container,
+.grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 1.875rem; /* 20px */ 
+}
+
+/*
+  ========================================
+  Clear-fix
+  ========================================
+*/
+
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  clear: both;
+  *zoom: 1;
+}
+
+/*
+  ========================================
+  Rows
+  ========================================
+*/
+.row,
+.row-alt {
+  min-width: 100%;
+}
+.row {
+  background: #fff;
+  padding: 4.125rem 0 2.75rem 0; /* 66px 0 44px 0 */
+}
+.row-alt {
+  background: #cbe2c1;
+  background: -webkit-linear-gradient(left, #a1d3b0, #f6f1d3);
+  background:    -moz-linear-gradient(to right, #a1d3b0, #f6f1d3);
+  background:         linear-gradient(to right, #a1d3b0, #f6f1d3);
+  padding: 2.75rem 0 1.375rem 0; /* 44px 0 22px 0 */
+}
+
+/*
+  ========================================
+  Typography
+  ========================================
+*/
+
+h1, h2, h3, h4 {
+  color: #648880;
+}
+h1, h3, h4, h5, p {
+  margin-bottom: 1.375rem; /* 22px / 16px */
+}
+h1 {
+  font-size: 2.25rem; /* 36px / 16px */
+  line-height: 1.2222222222222222222222222222222em; /* 44px / 36px */
+}
+h2 {
+  font-size: 1.5rem; /* 24px / 16px */
+  line-height: 1.2222222222222222222222222222222em; /* 44px /24px */
+}
+h3 {
+  font-size: 1.3125rem; /* 21px / 16px */
+}
+h4 {
+  font-size: 1.125rem; /* 18px / 16px */
+}
+h5 {
+  color: #a9b2b9;
+  font-size: 0.875rem; /* 14px / 16px */
+  font-weight: 400;
+  text-transform: uppercase;
+}
+strong {
+  font-weight: 400;
+}
+cite,
+em {
+  font-style: italic;
+}
+
+/*
+  ========================================
+  Leads
+  ========================================
+*/
+
+.lead {
+  text-align: center;
+}
+.lead h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+.lead p {
+  font-size: 1rem; /* 16px */
+  line-height: 1.375rem; /* 16px */
+  margin-bottom: 0;
+}
+
+/*
+  ========================================
+  Links
+  ========================================
+*/
+a {
+  color: #648880;
+  text-decoration: none;
+}
+a:hover {
+  color: #a9b2b9;
+}
+p a {
+  border-bottom: 0.0625rem solid #dfe2e5; /* 1px */
+}
+.primary-header a,
+.primary-footer a {
+  color: #fff;
+}
+.primary-header a:hover,
+.primary-footer a:hover {
+  color: #648880;
+}
+
+/*
+  ========================================
+  Buttons
+  ========================================
+*/
+
+.btn {
+  border-radius: 0.3125rem; /* 5px */
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  letter-spacing: .5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+.btn-default {
+  border: 0;
+  background: #648880;
+  padding: 0.6875rem 1.875rem; /* 11px 30px */
+  margin-bottom: 1.375rem; /* 22px */ 
+  font-size: 0.875rem; /* 14px */
+}
+.btn-default:hover {
+  background: #77a198;
+}
+.btn-alt {
+  border: 1px solid #fff;
+  padding: 0.625rem 0.625rem; /* 10px 10px */
+  margin-bottom: 1.375rem; /* 22px */
+}
+.btn-alt:hover {
+  background: #fff;
+  color: #648880;
+}
+
+/*
+  ========================================
+  Primary header
+  ========================================
+*/
+
+.logo {
+  border-top: 0.25rem solid #648880; /* 4px */
+  float: none;
+  font-size: 2.5rem; /* 40px */
+  font-weight: 100;
+  letter-spacing: 0.010416667em; /* .5px / 48px */
+  line-height: 0.916666667em; /* 44px / 48px */
+  margin-bottom: 0;
+  padding: 1.375rem 0 0 0; /* 22px 0 0 0 */
+  text-transform: uppercase;
+}
+.tagline {
+  margin: 0 0 0 0; /* 0 0 22px 0 */
+  font-size: 0.875rem;
+  text-align: left;
+}
+.primary-nav {
+  font-size: 0.625rem; /* 10px */
+  font-weight: 400;
+  letter-spacing: 0.03571428571428571428571428571429em; /* .5px / 14px */
+  text-transform: uppercase;
+}
+/*
+  ========================================
+  Primary footer
+  ========================================
+*/
+
+.primary-footer {
+  color: #648880;
+  font-size: 0.875rem; /* 14px */
+  padding-bottom: 2.75rem; /* 44px */
+  padding-top: 2.75rem; /* 44px */
+}
+.primary-footer small {
+  float: none;
+  font-weight: 400;
+}
+
+
+/*
+  ========================================
+  Navigation
+  ========================================
+*/
+
+.nav {
+  text-align: left;
+}
+.nav ul {
+  overflow: hidden;
+  }
+.nav li {
+  display: inline-block;
+  margin: 0.3125rem; /* 5px */
+  vertical-align: top;
+}
+.nav li a:active {
+  color: #a9b2b9;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 5px;
+}
+.nav li:last-child {
+  margin-right: 0;
+}
+
+/*
+  ========================================
+  Home
+  ========================================
+*/
+
+.hero {
+  color: #fff;
+  line-height: 1.375rem; /* 22px */
+  text-align: center;
+}
+.hero h2 {
+  font-size: 1.5rem; /* 24px */
+}
+.hero p {
+  font-size: 1rem; /* 16px */
+  font-weight: 100;
+}
+.teaser a:hover h3 {
+  color: #a9b2b9;
+}
+.teaser img {
+  border-radius: 0.3125rem; /* 5px */
+  display: block;
+  padding: auto;
+  margin-bottom: 1.375rem; /* 22px */
+  max-width: 100%
+}
+
+
+/*
+  ========================================
+  Speakers
+  ========================================
+*/
+
+.speaker {
+  margin-bottom: 2.75rem; /* 44px */
+}
+.speaker-info {
+  border: 0.0625rem solid #dfe2e5; /* 1px */
+  border-radius: 0.3125rem; /* 5px */
+  margin-top: 5.5rem; /* 88px */
+  padding-bottom: 1.375rem; /* 22px */ 
+  text-align: center;
+}
+.speaker-info img {
+  border-radius: 50%;
+  height: 8.125rem; /* 130px */
+  margin: -4.125rem 0 1.375rem 0; /* -66px 0 22px 0 */
+  vertical-align: top;
+}
+
+/*
+  ========================================
+  Schedule
+  ========================================
+*/
+
+table {
+  margin-bottom: 2.75rem; /* 44px */
+  width: 100%;
+}
+.table-scroll {
+  overflow-x: auto;
+}
+table:last-child {
+  margin-bottom: 0;
+}
+th,
+td {
+  padding-bottom: 1.375rem; /* 22px */
+  vertical-align: top;
+}
+th {
+  padding-right: 2.8125rem; /* 45px */ 
+  text-align: right;
+  width: 20%;
+}
+td {
+  width: 40%;
+}
+thead {
+  line-height: 2.75rem; /* 44px */
+}
+thead th {
+  color: #648880;
+  font-size: 1.5rem; /* 24px */
+}
+tbody th {
+  color: #a9b2b9;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 400;
+  padding-top: 1.375rem; /* 22px */
+  text-transform: uppercase;
+}
+tbody td {
+  border-top: 0.0625rem solid #dfe2e5; /* 1px */
+  padding-top: 1.3125rem; /* 21px */
+}
+tbody td:first-of-type {
+  padding-right: 0.9375rem; /* 15px */
+}
+tbody td:last-of-type {
+  padding-left: 0.9375rem; /* 15px */
+}
+tbody td:only-of-type {
+  padding-left: 0;
+  padding-right: 0;
+}
+table a {
+  color: #888;
+}
+table h4 {
+  margin-bottom: 0;
+}
+.schedule-offset {
+  color: #a9b2b9;
+}
+
+
+/*
+  ========================================
+  Register
+  ========================================
+*/
+
+.why-attend {
+  list-style: square;
+  margin: 0 0 1.375rem 1.875rem; /* 0 0 22px 30px */
+}
+form {
+  margin-bottom: 1.375rem; /* 22px */
+}
+input,
+select,
+textarea {
+  font: 300 1rem/1.375rem "Lato", Lato, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; /* 16px 22px */
+}
+
+.register-group label {
+  color: #648880;
+  cursor: pointer;
+  font-weight: 400;
+}
+.register-group input,
+.register-group select,
+.register-group textarea {
+  border: 0.0625rem solid #c6c9cc; /* 1px */
+  border-radius: 0.3125rem; /* 5px */
+  color: #888;
+  display: block;
+  margin: 0.3125rem 0 1.6875rem 0; /* 5px 0 27px 0; */
+  padding: 0.3125rem 0.5rem; /* 5px 8px */
+}
+.register-group input,
+.register-group textarea {
+  width: 90%;
+  
+}
+
+.register-group select {
+  height: 2.125rem; /* 34px */
+  width: 21.428571%; /* 60px / 280px */
+}
+.register-group textarea {
+  height: 4.875rem; /* 78px */
+  overflow: auto;
+}
+
+/* Larger than phablet (also point when grid becomes active) */
+@media (min-width: 34.375rem /*550px*/) {
+  /*
+  ========================================
+  Grid
+  ========================================
+*/
+
+.container,
+.grid {
+  margin: 0 auto;
+  width: 95.144%; /* 960px / 1009px */
+  height: auto;
+}
+.container {
+  padding-left: 1.875rem; /* 30px / 16px */
+  padding-right: 1.875rem; /* 30px / 16px */
+}
+.grid,
+.col-1-3,
+.col-2-3 {
+  padding-left: 0.9375rem; /* 15px / 16px */
+  padding-right: 0.9375rem; /* 15px / 16px */
+}
+.col-1-3,
+.col-2-3  {
+  display: inline-block;
+  vertical-align: top;
+}
+.col-1-3 {
+  width: 33.33%;
+  overflow: auto;
+}
+.col-2-3 {
+  width: 66.66%;
+}
+
+/*
+  ========================================
+  Leads
+  ========================================
+*/
+
+.lead {
+  text-align: center;
+}
+.lead h1 {
+  font-size: 2.25rem; /* 36px / 16px */
+  line-height: 1.2222222222222222222222222222222em; /* 44px / 36px */
+  margin-bottom: 1.375rem; /* 22px */
+}
+.lead p {
+  font-size: 1.3125rem; /* 21px / 16px */
+  line-height: 1.5714285714285714285714285714286em; /* 33px / 21px */
+}
+
+/*
+  ========================================
+  Home
+  ========================================
+*/
+
+.hero {
+  color: #fff;
+  line-height: 2.75rem; /* 44px */
+  padding: 1.375rem 5rem 4.125rem 5rem; /* 22px 80px 66px 80px */
+  text-align: center;
+}
+.hero h2 {
+  font-size: 2.25rem; /* 36px */
+}
+.hero p {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 100;
+}
+.teaser a:hover h3 {
+  color: #a9b2b9;
+}
+.teaser img {
+  border-radius: 0.3125rem; /* 5px */
+  display: block;
+  margin-bottom: 1.375rem; /* 22px */
+  max-width: 100%
+}
+}
+
+/* Larger than tablet */
+
+@media (min-width: 53.75rem /*860px*/) {
+/*
+  ========================================
+  Grid
+  ========================================
+*/
+
+.container,
+.grid {
+  margin: 0 auto;
+  width: 95.144%; /* 960px / 1009px */
+  height: auto;
+}
+.container {
+  padding-left: 1.875rem; /* 30px / 16px */
+  padding-right: 1.875rem; /* 30px / 16px */
+}
+.grid,
+.col-1-3,
+.col-2-3 {
+  padding-left: 0.9375rem; /* 15px / 16px */
+  padding-right: 0.9375rem; /* 15px / 16px */
+}
+.col-1-3,
+.col-2-3  {
+  display: inline-block;
+  vertical-align: top;
+}
+.col-1-3 {
+  width: 33.33%;
+}
+.col-2-3 {
+  width: 66.66%;
+}
+
+/*
+  ========================================
+  Rows
+  ========================================
+*/
+
+.row,
+.row-alt {
+  min-width: 95.144%; /* 960px / 1009px */
+}
+.row {
+  background: #fff;
+  padding: 4.125rem 0 2.75rem 0; /* 66px 0 44px 0 */
+}
+.row-alt {
+  background: #cbe2c1;
+  background: -webkit-linear-gradient(to right, #a1d3b0, #f6f1d3);
+  background:    -moz-linear-gradient(to right, #a1d3b0, #f6f1d3);
+  background:         linear-gradient(to right, #a1d3b0, #f6f1d3);
+  padding: 2.75rem 0 1.375rem 0; /* 44px 0 22px 0 */
+}
+
+/*
+  ========================================
+  Leads
+  ========================================
+*/
+
+.lead {
+  text-align: center;
+}
+.lead p {
+  font-size: 1.3125rem; /* 21px / 16px */
+  line-height: 1.5714285714285714285714285714286em; /* 33px / 21px */
+}
+
+/*
+  ========================================
+  Links
+  ========================================
+*/
+
+a {
+  color: #648880;
+  text-decoration: none;
+}
+a:hover {
+  color: #a9b2b9;
+}
+p a {
+  border-bottom: 0.0625rem solid #dfe2e5; /* 1px / 16px */
+}
+.primary-header a,
+.primary-footer a {
+  color: #fff;
+}
+.primary-header a:hover,
+.primary-footer a:hover {
+  color: #648880;
+}
+
+/*
+  ========================================
+  Buttons
+  ========================================
+*/
+.btn {
+  margin-bottom: 0;
+}
+.btn-default {
+  border: 0;
+  background: #648880;
+  padding: 0.6875rem 1.875rem; /* 11px 30px */
+  font-size: 0.875rem; /* 14px */
+}
+.btn-default:hover {
+  background: #77a198;
+}
+.btn-alt {
+  border: 1px solid #fff;
+  padding: 0.625rem 1.875rem; /* 10px 30px */
+}
+.btn-alt:hover {
+  background: #fff;
+  color: #648880;
+}
+
+/*
+  ========================================
+  Primary header
+  ========================================
+*/
+
+.logo {
+  border-top: 0.25rem solid #648880; /* 4px */
+  float: left;
+  font-size: 3rem; /* 48px */
+  font-weight: 100;
+  letter-spacing: 0.010416667em; /* .5px / 48px */
+  line-height: 0.916666667em; /* 44px / 48px */
+  padding: 2.5rem 0 1.375rem 0; /* 40px 0 22px 0 */
+  margin-bottom: 1.375rem; /* 22px / 16px */
+  text-transform: uppercase;
+  text-shadow: 0.125rem 0.125rem 0.3125rem #648880; /* 2px 2px 5px */
+}
+.tagline {
+  margin: 4.125rem 0 1.375rem 0; /* 66px 0 22px 0 */
+  font-size: 1.3125rem; /* 21px */
+  text-align: right;
+}
+.primary-nav {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 400;
+  letter-spacing: 0.03571428571428571428571428571429em; /* .5px / 14px */
+  text-transform: uppercase;
+}
+
+/*
+  ========================================
+  Primary footer
+  ========================================
+*/
+
+.primary-footer {
+  color: #648880;
+  font-size: 0.875rem; /* 14px */
+  padding-bottom: 2.75rem; /* 44px */
+  padding-top: 2.75rem; /* 44px */
+}
+.primary-footer small {
+  float: left;
+  font-weight: 400;
+}
+
+/*
+  ========================================
+  Navigation
+  ========================================
+*/
+
+.nav {
+  text-align: right;
+}
+.nav li {
+  display: inline-block;
+  margin: 0 0.625rem; /* 0 10px*/
+  vertical-align: top;
+}
+.nav li:last-child {
+  margin-right: 0;
+}
+
+/*
+  ========================================
+  Home
+  ========================================
+*/
+
+.hero {
+  color: #fff;
+  line-height: 2.75rem; /* 44px */
+  padding: 1.375rem 5rem 4.125rem 5rem; /* 22px 80px 66px 80px */
+  text-align: center;
+}
+.hero h2 {
+  font-size: 2.25rem; /* 36px */
+}
+.hero p {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 100;
+}
+.teaser a:hover h3 {
+  color: #a9b2b9;
+}
+.teaser img {
+  border-radius: 0.3125rem; /* 5px */
+  display: block;
+  margin-bottom: 1.375rem; /* 22px */
+  max-width: 100%
+}
+.teaser-speaker {
+  padding-top: 0; /* to override existing mobile first styles */
+}
+.teaser-venue {
+ padding-bottom: 0; /* to override existing mobile first styles */
+}
+
+
+/*
+  ========================================
+  Speakers
+  ========================================
+*/
+
+.speaker {
+  margin-bottom: 2.75rem; /* 44px */
+}
+.speaker-info {
+  border: 0.0625rem solid #dfe2e5; /* 1px */
+  border-radius: 0.3125rem; /* 5px */
+  margin-top: 5.5rem; /* 88px */
+  padding-bottom: 1.375rem; /* 22px */ 
+  text-align: center;
+}
+.speaker-info img {
+  border-radius: 50%;
+  height: 8.125rem; /* 130px */
+  margin: -4.125rem 0 1.375rem 0; /* -66px 0 22px 0 */
+  vertical-align: top;
+}
+
+/*
+  ========================================
+  Schedule
+  ========================================
+*/
+
+table {
+  margin-bottom: 2.75rem; /* 44px */
+  width: 100%;
+  overflow-x: auto;
+}
+table:last-child {
+  margin-bottom: 0;
+}
+th,
+td {
+  padding-bottom: 1.375rem; /* 22px */
+  vertical-align: top;
+}
+th {
+  padding-right: 2.8125rem; /* 45px */ 
+  text-align: right;
+  width: 20%;
+}
+td {
+  width: 40%;
+}
+thead {
+  line-height: 2.75rem; /* 44px */
+}
+thead th {
+  color: #648880;
+  font-size: 1.5rem; /* 24px */
+}
+tbody th {
+  color: #a9b2b9;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 400;
+  padding-top: 1.375rem; /* 22px */
+  text-transform: uppercase;
+}
+tbody td {
+  border-top: 0.0625rem solid #dfe2e5; /* 1px */
+  padding-top: 1.3125rem; /* 21px */
+}
+tbody td:first-of-type {
+  padding-right: 0.9375rem; /* 15px */
+}
+tbody td:last-of-type {
+  padding-left: 0.9375rem; /* 15px */
+}
+tbody td:only-of-type {
+  padding-left: 0;
+  padding-right: 0;
+}
+table a {
+  color: #888;
+}
+table h4 {
+  margin-bottom: 0;
+}
+.schedule-offset {
+  color: #a9b2b9;
+}
+
+/*
+  ========================================
+  Venue
+  ========================================
+*/
+
+.venue-theatre {
+  margin-bottom: 4.125rem; /* 66px */
+}
+.venue-hotel {
+  margin-bottom: 1.375rem; /* 22px */
+}
+.venue-map {
+  height: 16.5rem; /* 264px */
+}
+
+/*
+  ========================================
+  Register
+  ========================================
+*/
+
+.why-attend {
+  list-style: square;
+  margin: 0 0 1.375rem 1.875rem; /* 0 0 22px 30px */
+}
+form {
+  margin-bottom: 1.375rem; /* 22px */
+}
+input,
+select,
+textarea {
+  font: 300 1rem/1.375rem "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; /* 16px 22px */
+}
+.register-group label {
+  color: #648880;
+  cursor: pointer;
+  font-weight: 400;
+}
+.register-group input,
+.register-group select,
+.register-group textarea {
+  border: 0.0625rem solid #c6c9cc; /* 1px */
+  border-radius: 0.3125rem; /* 5px */
+  color: #888;
+  display: block;
+  margin: 0.3125rem 0 1.6875rem 0; /* 5px 0 27px 0; */
+  padding: 0.3125rem 0.5rem; /* 5px 8px */
+}
+.register-group input,
+.register-group textarea {
+  width: 100%;
+  background-color: rgba(128,128,128,0.2);  
+  -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+	  -moz-transition: 0.5s;
+	    -ms-transition: 0.5s;
+		  transition: 0.5s;
+}
+.register-group input:focus,
+.register-group textarea:focus {
+  background-color: #fff;
+  color: #888; 
+}
+.register-group select {
+  height: 2.125rem; /* 34px */
+  width: 21.428571428571428571428571428571%; /* 60px / 280px */
+}
+.register-group textarea {
+  height: 4.875rem; /* 78px */
+  overflow: auto;
+}
+
+/*
+  ==================================
+    Purchase
+  ==================================
+*/
+#purchase {
+  height: 300px;
+}
+}
