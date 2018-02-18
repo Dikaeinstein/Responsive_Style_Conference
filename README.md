@@ -1,5 +1,5 @@
 # Responsive_Style_Conference
-Responsive Style Conference website
+Style Conference website
 
 A website built with html5 and vanilla css3.
 
